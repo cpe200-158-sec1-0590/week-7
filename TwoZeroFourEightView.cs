@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace twozerofoureight
+namespace twozerofoureight 
 {
     public partial class TwoZeroFourEightView : Form, View
     {
@@ -18,6 +18,10 @@ namespace twozerofoureight
         public TwoZeroFourEightView()
         {
             InitializeComponent();
+            ScoreDesign Score = new ScoreDesign();
+            Score.Visible = true;
+            Score.Enabled = true;
+
             model = new TwoZeroFourEightModel();
             model.AttachObserver(this);
             controller = new TwoZeroFourEightController();
@@ -77,25 +81,40 @@ namespace twozerofoureight
             UpdateTile(lbl33,board[3, 3]);
         }
 
+        int x=4;
+
         private void btnLeft_Click(object sender, EventArgs e)
         {
             controller.ActionPerformed(TwoZeroFourEightController.LEFT);
+            x = x + 2;
+            string line = x.ToString();
+            lblScore.Text = line;
         }
 
         private void btnRight_Click(object sender, EventArgs e)
         {
             controller.ActionPerformed(TwoZeroFourEightController.RIGHT);
+            x = x + 2;
+            string line = x.ToString();
+            lblScore.Text = line;
         }
 
         private void btnUp_Click(object sender, EventArgs e)
         {
             controller.ActionPerformed(TwoZeroFourEightController.UP);
+            x = x + 2;
+            string line = x.ToString();
+            lblScore.Text = line;
         }
 
         private void btnDown_Click(object sender, EventArgs e)
         {
             controller.ActionPerformed(TwoZeroFourEightController.DOWN);
+            x = x + 2;
+            string line = x.ToString();
+            lblScore.Text = line;
         }
 
+        
     }
 }
