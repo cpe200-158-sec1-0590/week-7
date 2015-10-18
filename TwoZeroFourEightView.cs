@@ -29,7 +29,7 @@ namespace twozerofoureight
             controller.ActionPerformed(TwoZeroFourEightController.LEFT);
         }
 
-        public void Notify(Model m)
+        public void Notify(Model m) 
         {
             UpdateBoard(((TwoZeroFourEightModel) m).GetBoard());
             lblScore.Text = ""+ ((TwoZeroFourEightModel)m).Score; // ""+ string
