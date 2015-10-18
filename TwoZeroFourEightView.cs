@@ -18,7 +18,7 @@ namespace twozerofoureight
         public TwoZeroFourEightView()
         {
             InitializeComponent();
-            ScoreDesign Score = new ScoreDesign();
+            TwoZeroFourEightScoreView Score = new TwoZeroFourEightScoreView();
             Score.Visible = true;
             Score.Enabled = true;
 
@@ -27,6 +27,8 @@ namespace twozerofoureight
             controller = new TwoZeroFourEightController();
             controller.AddModel(model);
             controller.ActionPerformed(TwoZeroFourEightController.LEFT);
+
+            model.AttachObserver(Score);
         }
 
         public void Notify(Model m) 

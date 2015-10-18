@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace twozerofoureight
 {
-    public partial class ScoreDesign : Form
+    public partial class TwoZeroFourEightScoreView : Form, View
     {
-        public ScoreDesign()
+        public TwoZeroFourEightScoreView()
         {
             InitializeComponent();
 
+        }
+        public void Notify(Model m)
+        {
+            label2.Text = "" + ((TwoZeroFourEightModel)m).Score; // ""+ string
         }
     }
 }
